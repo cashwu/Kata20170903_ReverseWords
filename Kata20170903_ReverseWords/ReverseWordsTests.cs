@@ -19,6 +19,12 @@ namespace Kata20170903_ReverseWords
             ReverseWordsShouldBe("ab", "ba");
         }
 
+        [TestMethod]
+        public void input_a_b_shuold_return_a_b()
+        {
+            ReverseWordsShouldBe("a b", "a b");
+        }
+
         private static void ReverseWordsShouldBe(string expected, string str)
         {
             var kata = new Kata();
@@ -31,7 +37,7 @@ namespace Kata20170903_ReverseWords
     {
         public string ReverseWords(string str)
         {
-            return string.Concat(str.Reverse());
+            return string.Join(" ", str.Split(' ').Select(s => string.Concat(s.Reverse())));
         }
     }
 }
