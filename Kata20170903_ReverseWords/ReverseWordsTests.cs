@@ -25,6 +25,12 @@ namespace Kata20170903_ReverseWords
             ReverseWordsShouldBe("a b", "a b");
         }
 
+        [TestMethod]
+        public void input_ab_bc_shuold_return_ba_cb()
+        {
+            ReverseWordsShouldBe("ab bc", "ba cb");
+        }
+
         private static void ReverseWordsShouldBe(string expected, string str)
         {
             var kata = new Kata();
